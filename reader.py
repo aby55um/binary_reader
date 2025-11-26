@@ -4,6 +4,8 @@ from tkinter import filedialog
 def choose_file(event=None):
 	filename = filedialog.askopenfilename()
 	print('Selected: ', filename)
+	f = open(filename)
+	print(f.read())
 
 root = tk.Tk()
 
