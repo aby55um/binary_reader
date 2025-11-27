@@ -5,7 +5,7 @@ def choose_file(event=None):
 	filename = filedialog.askopenfilename()
 	print('Selected: ', filename)
 	f = open(filename)
-	print(f.read())
+	print(f.read(), 'rb')
 
 root = tk.Tk()
 
@@ -14,5 +14,7 @@ root.geometry("800x600")
 
 button = tk.Button(root, text='Open', command=choose_file)
 button.pack()
+
+tk.Entry().pack()
 
 root.mainloop()
