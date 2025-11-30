@@ -35,7 +35,12 @@ root.geometry("800x600")
 button = tk.Button(root, text='Open', command=choose_file)
 button.place(x=50, y=20)
 
-text = tk.Text()
+scroll = tk.Scrollbar(root)
+scroll.place(x=750, y=50, height=500)
+
+text = tk.Text(root, yscrollcommand = scroll.set)
 text.place(x=50,y=50, width=700, height=500)
+
+scroll.config(command = text.yview)
 
 root.mainloop()  
