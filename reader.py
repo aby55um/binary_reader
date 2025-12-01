@@ -18,13 +18,13 @@ def choose_file(event=None):
 			ascii_string = ascii_string + '.'
 		byte = f.read(1)
 		newchar += 1
-		if newchar == 7:
+		if newchar == 8:
 			file_string = file_string + '  '
-		if newchar == 15:
+		if newchar == 16:
 			file_string = file_string + '   ' + ascii_string + '\n  '
 			ascii_string = '' 
 			newchar = 0
-	file_string = file_string + (50-3*newchar-int(newchar/7)*2+int(newchar/14)*2)*' ' + ascii_string + '\n'
+	file_string = file_string + (53-3*newchar-int(newchar/8)*2+int(newchar/16)*2)*' ' + ascii_string + '\n'
 	text.insert("1.0",file_string)
 
 root = tk.Tk()
@@ -43,4 +43,4 @@ text.place(x=50,y=50, width=700, height=500)
 
 scroll.config(command = text.yview)
 
-root.mainloop()  
+root.mainloop()
